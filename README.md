@@ -36,6 +36,28 @@ End-to-end and automation testing implemented separately using Playwright:
 3. Setup `.env`
 4. Run `php artisan migrate`
 5. Run `php artisan serve`
+   
+## 🗄️ Database Setup
+To create tables and generate the default admin account, run:
+php artisan migrate:fresh --seed
+This command will:
+1. Drop all existing tables (if any)
+2. Recreate the database structure
+3. Automatically create the default admin account
+   
+⚠️ Use migrate:fresh for development only.
+
+For production environment, use:
+php artisan migrate
+
+## 👤 Default Admin Account
+After running the seeder, you can login using:
+Email    : admin@eatly.com
+Password : admin123
+
+## 🧪 Testing
+End-to-end and automation testing implemented separately using Playwright:
+👉 See: eatly-qa-automation repository
 
 ## 👨‍💻 Author
 Developed as part of a final project and extended as a portfolio system.
