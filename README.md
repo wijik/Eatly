@@ -118,7 +118,6 @@ After running the seeder, you can login using:
 ```bash
 Email    : admin@eatly.com
 Password : admin123
-Role     : Admin (role = 0)
 ```
 
 > 🔐 It is strongly recommended to change the password after first login.
