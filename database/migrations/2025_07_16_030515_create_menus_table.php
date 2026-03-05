@@ -13,14 +13,18 @@ return new class extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id('id_menu');
-            $table->string('nama_menu');
+            $table->string('gambar', 100);
+            $table->string('nama_menu', 100);
+            $table->text('deskripsi');
+            $table->boolean('is_today')->default(false);
+            $table->timestamp('is_today_set_at')->nullable();
             $table->integer('kalori');
             $table->integer('protein');
             $table->integer('lemak');
-            $table->unsignedBigInteger('preferensi_rasa_id');
+            $table->unsignedBigInteger('id_preferensi_rasa');
             $table->timestamps();
 
-            $table->foreign('preferensi_rasa_id')
+            $table->foreign('id_preferensi_rasa')
                 ->references('id_preferensi_rasa')
                 ->on('preferensi_rasa')
                 ->onDelete('cascade');

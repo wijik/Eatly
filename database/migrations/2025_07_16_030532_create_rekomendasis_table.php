@@ -13,14 +13,21 @@ return new class extends Migration
     {
         Schema::create('rekomendasis', function (Blueprint $table) {
             $table->id('id_rekomendasi');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('menu_id');
-            $table->float('skor');
+            $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('id_menu');
+            $table->double('skor');
             $table->date('tanggal');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id_user')->on('users')->onDelete('cascade');
-            $table->foreign('menu_id')->references('id_menu')->on('menus')->onDelete('cascade');
+            $table->foreign('id_user')
+                ->references('id_user')
+                ->on('users')
+                ->onDelete('cascade');
+
+            $table->foreign('id_menu')
+                ->references('id_menu')
+                ->on('menus')
+                ->onDelete('cascade');
         });
     }
 

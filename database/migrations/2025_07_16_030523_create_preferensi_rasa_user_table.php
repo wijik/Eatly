@@ -13,15 +13,22 @@ return new class extends Migration
     {
         Schema::create('preferensi_rasa_user', function (Blueprint $table) {
             $table->id('id_preferensi_rasa_user');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('preferensi_rasa_id');
+            $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('id_preferensi_rasa');
             $table->integer('nilai_konversi');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id_user')->on('users')->onDelete('cascade');
-            $table->foreign('preferensi_rasa_id')->references('id_preferensi_rasa')->on('preferensi_rasa')->onDelete('cascade');
+            $table->foreign('id_user')
+                ->references('id_user')
+                ->on('users')
+                ->onDelete('cascade');
 
-            $table->unique(['user_id', 'preferensi_rasa_id']);
+            $table->foreign('id_preferensi_rasa')
+                ->references('id_preferensi_rasa')
+                ->on('preferensi_rasa')
+                ->onDelete('cascade');
+
+            $table->unique(['id_user', 'id_preferensi_rasa']);
         });
     }
 

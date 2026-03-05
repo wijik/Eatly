@@ -84,7 +84,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="kalori" class="form-control-label">Kalori (25%)</label>
-                                    <input class="form-control @error('kalori') is-invalid @enderror" type="number" min="0" value="{{ old('kalori', $menu->kalori) }}" name="kalori" required>
+                                    <input class="form-control @error('kalori') is-invalid @enderror" type="number" min="0" max="1000" value="{{ old('kalori', $menu->kalori) }}" name="kalori" required>
 
                                     @error('kalori')
                                     <span class="invalid-feedback" role="alert">
@@ -96,7 +96,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="protein" class="form-control-label">Protein (30%)</label>
-                                    <input class="form-control @error('protein') is-invalid @enderror" type="number" min="0" value="{{ old('protein', $menu->protein) }}" name="protein" required>
+                                    <input class="form-control @error('protein') is-invalid @enderror" type="number" min="0" max="1000" value="{{ old('protein', $menu->protein) }}" name="protein" required>
 
                                     @error('protein')
                                     <span class="invalid-feedback" role="alert">
@@ -108,7 +108,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="lemak" class="form-control-label">Lemak (25%)</label>
-                                    <input class="form-control @error('lemak') is-invalid @enderror" type="number" min="0" value="{{ old('lemak', $menu->lemak) }}" name="lemak" required>
+                                    <input class="form-control @error('lemak') is-invalid @enderror" type="number" min="0" max="1000" value="{{ old('lemak', $menu->lemak) }}" name="lemak" required>
 
                                     @error('lemak')
                                     <span class="invalid-feedback" role="alert">

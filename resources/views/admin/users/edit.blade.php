@@ -60,7 +60,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="berat_badan" class="form-control-label">Berat Badan</label>
-                                    <input class="form-control @error('berat_badan') is-invalid @enderror" type="number" name="berat_badan" value="{{ old('berat_badan', $user->berat_badan) }}" required min="40">
+                                    <input class="form-control @error('berat_badan') is-invalid @enderror" type="number" min="30" max="200" name="berat_badan" value="{{ old('berat_badan', $user->berat_badan) }}" required min="40">
                                     @error('berat_badan')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

@@ -47,7 +47,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="berat_badan" class="form-control-label">Berat Badan</label>
-                                    <input class="form-control @error('berat_badan') is-invalid @enderror" type="number" placeholder="Berat Badan User" name="berat_badan" required autofocus min="35">
+                                    <input class="form-control @error('berat_badan') is-invalid @enderror" type="number" min="30" max="200" placeholder="Berat Badan User" name="berat_badan" required autofocus min="35">
 
                                     @error('berat_badan')
                                     <span class="invalid-feedback" role="alert">

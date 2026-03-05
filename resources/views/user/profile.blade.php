@@ -22,7 +22,7 @@
                     </div>
                     <div class="mb-3 text-start">
                         <label for="weight">Berat Badan (kg)</label>
-                        <input type="number" class="form-control" id="weight" name="berat_badan" value="{{ old('berat_badan', $user->berat_badan) }}">
+                        <input type="number" min="30" max="200" class="form-control" id="weight" name="berat_badan" value="{{ old('berat_badan', $user->berat_badan) }}">
                     </div>
                     <div class="mb-3 text-start">
                         <label class="form-label">Preferensi Rasa <small class="text-muted">(Pilih maksimal 3)</small></label>
